@@ -8,13 +8,13 @@ use Illuminate\Http\Request;
 class HomepageController extends FrontendController
 {
     public function index(){
-        return 'Homepage';
-        //return view('frontend.index');
+
+        return view('frontend.index');
     }
 
     public function about(){
-        return 'About Us';
-        //return view('frontend.index');
+
+        return view('frontend.about');
     }
 
     public function contact(){

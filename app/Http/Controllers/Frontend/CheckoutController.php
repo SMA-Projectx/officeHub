@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class CheckoutController extends FrontendController
 {
     public function index(){
-        return 'Checkout';
-        //return view('frontend.checkout');
+
+        return view('frontend.checkout');
     }
 }

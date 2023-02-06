@@ -8,12 +8,12 @@ use Illuminate\Http\Request;
 class RoomsController extends FrontendController
 {
     public function rooms(){
-        return 'Rooms';
-        //return view('frontend.cart');
+
+        return view('frontend.rooms');
     }
 
     public function room($id){
-        return 'Room ' . $id;
-        //return view('frontend.cart');
+        $room =  '';
+        return view('frontend.room', ['room' => $room]);
     }
 }
