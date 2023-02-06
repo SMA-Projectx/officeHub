@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class CartController extends FrontendController
 {
     public function index(){
-        return 'Cart';
-        //return view('frontend.cart');
+
+        return view('frontend.cart');
     }
 
 
