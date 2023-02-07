@@ -6,6 +6,8 @@ use App\Http\Controllers\Frontend\CartController AS Cart;
 use App\Http\Controllers\Frontend\CheckoutController AS Checkout;
 use App\Http\Controllers\Frontend\RoomsController AS FrontRooms;
 
+use App\Http\Controllers\Backend\DashboardController AS AdminDashboard;
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +43,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+//1 - Admin Routes
+Route::group([ 'prefix' =>'admin', 'middleware' => ['auth','verified', 'isAdmin']], function () {
+
+    Route::resources([
+        '/' => AdminDashboard::class,
+    ]);
+
+    //Route::get('/products/items/{id}', [ProductsController::class, 'items']);
+
 });
 
 require __DIR__.'/auth.php';

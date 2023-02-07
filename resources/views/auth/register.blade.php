@@ -1,52 +1,99 @@
-<x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
+@extends('layouts.frontend')
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Username')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus />
-            <x-input-error :messages="$errors->get('username')" class="mt-2" />
+@section('title')
+    Register
+@endsection
+
+@section('banner')
+    @include('partials.frontend.inner-banner')
+@endsection
+
+@section('content')
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <section id="contact" class="margin-bottom-70">
+                    <h4><i class="sl sl-icon-user-follow"></i> Register</h4>
+                    @if($errors->any())
+                        @foreach ($errors->all() as $error)
+                            <div class="bg-danger" style="font-weight: bold;padding: 10px 20px;margin-bottom: 10px;">
+                                {{$error}}
+                            </div>
+                        @endforeach
+                    @endif
+                    <form id="contactform" method="POST" action="{{ route('register') }}">
+                        @csrf
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Username</label>
+                                <input name="username" type="text" placeholder="Username" required />
+                            </div>
+                            <div class="col-md-6">
+                                <label>Email Address</label>
+                                <input name="email" type="email" placeholder="Email" required />
+                            </div>
+                            <div class="col-md-6">
+                                <label>First Name</label>
+                                <input name="first_name" type="text" placeholder="First Name" required />
+                            </div>
+                            <div class="col-md-6">
+                                <label>Last Name</label>
+                                <input name="last_name" type="text" placeholder="Last Name" required />
+                            </div>
+                            <div class="col-md-6">
+                                <label>Password</label>
+                                <input name="password" type="password" placeholder="Password" required />
+                            </div>
+                            <div class="col-md-6">
+                                <label>Re-Password</label>
+                                <input name="password_confirmation" type="password" placeholder="Re Password" required />
+                            </div>
+
+                            <div class="col-md-4">
+                                <label>Gender</label>
+                                <select class="utf_chosen_select" name="gender">
+                                    <option value="1">Male</option>
+                                    <option value="2">Female</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label>Register As a</label>
+                                <select class="utf_chosen_select" name="role_id">
+                                    <option value="3">User</option>
+                                    <option value="2">Seller</option>
+                                </select>
+                            </div>
+                        </div>
+                        <hr>
+                        <button type="submit" class="submit button" id="submit" style="margin-top: 20px;">Register</button>
+                    </form>
+                </section>
+            </div>
+
+            <div class="col-md-5">
+                <div class="utf_box_widget margin-bottom-70">
+                    <h3><i class="sl sl-icon-login"></i> Already a User?</h3>
+                    <a href="{{ route('login') }}" class="submit button" >Login</a>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+@endsection
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+@section('css')
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+@endsection
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+@section('js')
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+@endsection
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required />
+@section('styles')
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
+@endsection
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
+@section('script')
 
-            <x-primary-button class="ml-4">
-                {{ __('Register') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+@endsection
