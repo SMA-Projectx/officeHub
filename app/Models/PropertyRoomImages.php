@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class PropertyRoomImages extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'property_room_id',
+        'name',
+        'is_primary',
+        'status',
+
+    ];
 }
