@@ -15,15 +15,16 @@
             <div class="col-md-12 listing_grid_item">
 
                 <div class="row">
+                    @foreach($rooms as $room)
                     <div class="col-md-4 col-lg-4 col-md-12"> <a href="listings_single_page_1.html" class="utf_listing_item-container" data-marker-id="1">
                             <div class="utf_listing_item"> <img src="images/utf_listing_item-01.jpg" alt=""> <span class="tag"><i class="im im-icon-Hotel"></i> Hotels</span> <span class="featured_tag">Featured</span>
                                 <span class="utf_closed">Closed</span>
                                 <div class="utf_listing_item_content">
                                     <div class="utf_listing_prige_block">
-                                        <span class="utf_meta_listing_price"><i class="fa fa-tag"></i> $45 - $70</span>
+                                        <span class="utf_meta_listing_price"><i class="fa fa-tag"></i>{{ $room->price }} </span>
                                         <span class="utp_approve_item"><i class="utf_approve_listing"></i></span>
                                     </div>
-                                    <h3>Chontaduro Barcelona</h3>
+                                    <h3>{{ $room->name }}</h3>
                                     <span><i class="sl sl-icon-location"></i> The Ritz-Carlton, Hong Kong</span>
                                     <span><i class="sl sl-icon-phone"></i> (415) 796-3633</span>
                                 </div>
@@ -35,6 +36,7 @@
                             </div>
                         </a>
                     </div>
+                    @endforeach
                 </div>
                 <div class="clearfix"></div>
                 <div class="row">
