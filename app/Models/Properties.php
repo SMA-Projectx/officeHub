@@ -19,4 +19,12 @@ class Properties extends Model
         'status',
         'is_approved',
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function room(){
+        return $this->hasMany(PropertyRooms::class);
+    }
 }

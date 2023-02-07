@@ -7,6 +7,10 @@ use App\Http\Controllers\Frontend\CheckoutController AS Checkout;
 use App\Http\Controllers\Frontend\RoomsController AS FrontRooms;
 
 use App\Http\Controllers\Backend\DashboardController AS AdminDashboard;
+use App\Http\Controllers\Backend\EquipmentsController AS Equipments;
+use App\Http\Controllers\Backend\FeaturesController AS Features;
+use App\Http\Controllers\Backend\PropertiesController AS Properties;
+use App\Http\Controllers\Backend\PropertyRoomsController AS PropertyRooms;
 
 
 use Illuminate\Support\Facades\Route;
@@ -50,6 +54,11 @@ Route::group([ 'prefix' =>'admin', 'middleware' => ['auth','verified', 'isAdmin'
 
     Route::resources([
         '/' => AdminDashboard::class,
+        '/equipments' => Equipments::class,
+        '/features' => Features::class,
+        '/properties' => Properties::class,
+        '/rooms' => PropertyRooms::class,
+
     ]);
 
     //Route::get('/products/items/{id}', [ProductsController::class, 'items']);

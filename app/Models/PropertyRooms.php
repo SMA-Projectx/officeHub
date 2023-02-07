@@ -16,4 +16,8 @@ class PropertyRooms extends Model
         'price',
         'status',
     ];
+
+    public function property(){
+        return $this->belongsTo(Properties::class);
+    }
 }
