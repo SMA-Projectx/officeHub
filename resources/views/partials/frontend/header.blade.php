@@ -25,7 +25,7 @@
             </div>
             @if(!Auth::user())
             <div class="utf_right_side">
-                <div class="header_widget"> <a href="{{ url('login') }}" class="button border sign-in"><i class="fa fa-sign-in"></i> Sign In</a> <a href="{{ url('register') }}" class="button border with-icon"><i class="sl sl-icon-user"></i> Add Listing</a></div>
+                <div class="header_widget"> <a href="{{ url('login') }}" class="button border sign-in"><i class="fa fa-sign-in"></i> Sign In</a> <a href="{{ url('register') }}" class="button border with-icon"><i class="sl sl-icon-user"></i> Register</a></div>
             </div>
             @endif
         </div>
