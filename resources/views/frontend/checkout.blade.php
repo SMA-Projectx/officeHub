@@ -11,12 +11,19 @@
 @section('content')
 
     <div class="container margin-bottom-75">
-        <form method="POST" action="{{ route('cart.store')  }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('checkout.store')  }}" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-lg-8 col-md-8 utf_listing_payment_section">
                     <div class="utf_booking_listing_section_form margin-bottom-40">
                         <h3><i class="sl sl-icon-paper-plane"></i> Billing Information</h3>
+                        @if($errors->any())
+                            @foreach ($errors->all() as $error)
+                                <div class="bg-danger" style="font-weight: bold;padding: 10px 20px;margin-bottom: 10px;">
+                                    {{$error}}
+                                </div>
+                            @endforeach
+                        @endif
                         <div class="row">
                             <div class="col-md-6">
                                 <label>First Name</label>
@@ -28,35 +35,35 @@
                             </div>
                             <div class="col-md-6">
                                 <label>Company Name</label>
-                                <input type="text" value="" name="company_name" placeholder="Last Name">
+                                <input type="text" value="" name="company_name" placeholder="Company Name">
                             </div>
                             <div class="col-md-6">
                                 <div class="medium-icons">
                                     <label>E-Mail</label>
-                                    <input type="text" value="" placeholder="Email">
+                                    <input type="text" value="" name="email" placeholder="Email">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="medium-icons">
                                     <label>Phone</label>
-                                    <input type="text" value="" placeholder="Phone">
+                                    <input type="text" value="" name="phone" placeholder="Phone">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <label>Street Address</label>
-                                <input type="text" value="" name="street_address" placeholder="Last Name">
+                                <input type="text" value="" name="street_address" placeholder="Street Address">
                             </div>
                             <div class="col-md-6">
                                 <label>Address2</label>
-                                <input type="text" value="" name="address2" placeholder="Last Name">
+                                <input type="text" value="" name="address2" placeholder="Address2">
                             </div>
                             <div class="col-md-6">
                                 <label>Town</label>
-                                <input type="text" value="" name="town" placeholder="Last Name">
+                                <input type="text" value="" name="town" placeholder="Town">
                             </div>
                             <div class="col-md-6">
                                 <label>Postcode</label>
-                                <input type="text" value="" name="postcode" placeholder="Last Name">
+                                <input type="text" value="" name="postcode" placeholder="Postcodes">
                             </div>
                             <div class="col-md-6">
                                 <label>District</label>
@@ -74,7 +81,7 @@
                         <div class="payment">
                             <div class="utf_payment_tab_block">
                                 <div class="utf_payment_trigger_tab">
-                                    <input checked="" id="paypal" name="payment_method" type="radio" value="bank">
+                                    <input checked="" id="paypal" name="payment_method" type="radio" value="1">
                                     <label for="paypal">Bank Transfer</label>
                                     <img class="utf_payment_logo paypal" src="images/paypal_pay.png" alt="">
                                 </div>
@@ -82,7 +89,7 @@
 
                             <div class="utf_payment_tab_block utf_payment_tab_block_active">
                                 <div class="utf_payment_trigger_tab">
-                                    <input type="radio" name="payment_method" id="creditCart" value="cash">
+                                    <input type="radio" name="payment_method" id="creditCart" value="2">
                                     <label for="creditCart">Cash</label>
                                 </div>
                             </div>

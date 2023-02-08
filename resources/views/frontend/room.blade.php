@@ -65,9 +65,8 @@
                                 </div>
                             </h3>
                             <div class="row with-forms margin-top-0">
-                                <div class="col-lg-12 col-md-12 select_date_box">
+                                <div class="col-lg-12 col-md-12 ">
                                     <input type="date" name="date" placeholder="Select Date" >
-                                    <i class="fa fa-calendar"></i>
                                 </div>
                             </div>
                             <input type="hidden" name="room_id" value="{{ $room->id }}">
