@@ -11,191 +11,108 @@
 @section('content')
 
     <div class="container margin-bottom-75">
-        <div class="row">
-            <div class="col-lg-8 col-md-8 utf_listing_payment_section">
-                <div class="utf_booking_listing_section_form margin-bottom-40">
-                    <h3><i class="sl sl-icon-paper-plane"></i> Billing Information</h3>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label>First Name</label>
-                            <input type="text" value="" placeholder="First Name">
-                        </div>
-                        <div class="col-md-6">
-                            <label>Last Name</label>
-                            <input type="text" value="" placeholder="Last Name">
-                        </div>
-                        <div class="col-md-6">
-                            <div class="medium-icons">
-                                <label>E-Mail</label>
-                                <input type="text" value="" placeholder="Email">
+        <form method="POST" action="{{ route('cart.store')  }}" enctype="multipart/form-data">
+            @csrf
+            <div class="row">
+                <div class="col-lg-8 col-md-8 utf_listing_payment_section">
+                    <div class="utf_booking_listing_section_form margin-bottom-40">
+                        <h3><i class="sl sl-icon-paper-plane"></i> Billing Information</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>First Name</label>
+                                <input type="text" value="" name="first_name" placeholder="First Name">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Last Name</label>
+                                <input type="text" value="" name="last_name" placeholder="Last Name">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Company Name</label>
+                                <input type="text" value="" name="company_name" placeholder="Last Name">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="medium-icons">
+                                    <label>E-Mail</label>
+                                    <input type="text" value="" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="medium-icons">
+                                    <label>Phone</label>
+                                    <input type="text" value="" placeholder="Phone">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Street Address</label>
+                                <input type="text" value="" name="street_address" placeholder="Last Name">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Address2</label>
+                                <input type="text" value="" name="address2" placeholder="Last Name">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Town</label>
+                                <input type="text" value="" name="town" placeholder="Last Name">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Postcode</label>
+                                <input type="text" value="" name="postcode" placeholder="Last Name">
+                            </div>
+                            <div class="col-md-6">
+                                <label>District</label>
+                                <select name="district_id">
+                                    <option value="1">Colombo</option>
+                                    <option value="2">Gampaha</option>
+                                    <option value="3">Kalutara</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="medium-icons">
-                                <label>Phone</label>
-                                <input type="text" value="" placeholder="Phone">
+                    </div>
+
+                    <div class="utf_booking_payment_option_form">
+                        <h3><i class="sl sl-icon-credit-card "></i> Payment Method</h3>
+                        <div class="payment">
+                            <div class="utf_payment_tab_block">
+                                <div class="utf_payment_trigger_tab">
+                                    <input checked="" id="paypal" name="payment_method" type="radio" value="bank">
+                                    <label for="paypal">Bank Transfer</label>
+                                    <img class="utf_payment_logo paypal" src="images/paypal_pay.png" alt="">
+                                </div>
+                            </div>
+
+                            <div class="utf_payment_tab_block utf_payment_tab_block_active">
+                                <div class="utf_payment_trigger_tab">
+                                    <input type="radio" name="payment_method" id="creditCart" value="cash">
+                                    <label for="creditCart">Cash</label>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="utf_booking_payment_option_form">
-                    <h3><i class="sl sl-icon-credit-card "></i> Payment Method</h3>
-                    <div class="payment">
-                        <div class="utf_payment_tab_block">
-                            <div class="utf_payment_trigger_tab">
-                                <input checked="" id="stripe" name="cardType" type="radio" value="stripe">
-                                <label for="stripe">Paywith Stripe</label>
-                                <img class="utf_payment_logo stripe" src="images/stripe.png" alt="">
-                            </div>
-                            <div class="utf_payment_tab_block_content">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="card-label">
-                                            <label for="name">Name</label>
-                                            <input id="nameOnCard" name="stripename" placeholder="Name" required="" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="card-label">
-                                            <label for="email">Email</label>
-                                            <input id="email" name="email" placeholder="Email" required="" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="card-label">
-                                            <label for="phoneNumber">Phone Number</label>
-                                            <input id="phoneNumber" placeholder="Phone Number" required="" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="card-label">
-                                            <label for="couponCode">Coupon Code?</label>
-                                            <input id="couponCode" placeholder="Coupon Code" required="" type="text">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="utf_payment_tab_block">
-                            <div class="utf_payment_trigger_tab">
-                                <input checked="" id="paypal" name="cardType" type="radio" value="paypal">
-                                <label for="paypal">PayPal</label>
-                                <img class="utf_payment_logo paypal" src="images/paypal_pay.png" alt="">
-                            </div>
-                            <div class="utf_payment_tab_block_content">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="card-label">
-                                            <label for="payPalname">PayPal Name</label>
-                                            <input id="nameOnCard" name="payPalname" placeholder="Paypal Name" required="" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="card-label">
-                                            <label for="payPalemail">PayPal Email</label>
-                                            <input id="payPalemail" name="payPalemail" placeholder="Paypal Email" required="" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="card-label">
-                                            <label for="phoneNumber">Phone Number</label>
-                                            <input id="phoneNumber" placeholder="Phone Number" required="" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="card-label">
-                                            <label for="couponCode">Coupon Code?</label>
-                                            <input id="couponCode" placeholder="Coupon Code" required="" type="text">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="utf_payment_tab_block utf_payment_tab_block_active">
-                            <div class="utf_payment_trigger_tab">
-                                <input type="radio" name="cardType" id="creditCart" value="creditCard">
-                                <label for="creditCart">Credit / Debit Card</label>
-                                <img class="utf_payment_logo" src="images/pay_icon.png" alt="">
-                            </div>
-                            <div class="utf_payment_tab_block_content">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="card-label">
-                                            <label for="cardNumber">Card Number</label>
-                                            <input id="cardnumber" name="cardNumber" placeholder="0000  0000  0000  0000" required="" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="card-label">
-                                            <label for="nameOnCard">Card Holder Name</label>
-                                            <input id="cardname" name="cardName" placeholder="Card Holder Name" required="" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card-label">
-                                            <label for="expirynDate">Expiry Month</label>
-                                            <input id="expiryDate" placeholder="MM" required="" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card-label">
-                                            <label for="expiryDate">Expiry Year</label>
-                                            <input id="expirynDate" placeholder="YYYY" required="" type="text">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card-label">
-                                            <label for="cvv">CVV Code</label>
-                                            <input id="cvv" required="" placeholder="***" type="text">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="col-lg-4 col-md-4 margin-top-0 utf_listing_payment_section">
+                    <div class="boxed-widget opening-hours summary margin-top-0">
+                        <h3><i class="fa fa-calendar-check-o"></i> Booking Summary</h3>
+                        <ul>
+                            @php
+                                $gross = 0;
+                            @endphp
+                            @foreach($rooms as $room)
+                                <li>{{ $room->room->name }} <span>{{ number_format($room->room->price, 2) }}</span></li>
+                                @php
+                                    $gross += $room->room->price;
+                                @endphp
+                            @endforeach
+                            <li class="total-costs">Sub Total <span>{{ number_format($gross, 2) }}</span></li>
+                            <li>Discount <span>0.00</span></li>
+                            <li class="total-costs">Total Cost <span>{{ number_format($gross, 2) }}</span></li>
+                        </ul>
+                        <div class="row" style="border-top: 1px solid #ccc;padding: 20px 0 0;">
+                            <button type="submit" class="button button-primary" style="width: 100%; text-align: center;">Place Order</button>
                         </div>
                     </div>
-                    <a href="listing_booking_confirmation.html" class="button utf_booking_confirmation_button margin-top-20 margin-bottom-10">Confirm Now</a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 margin-top-0 utf_listing_payment_section">
-                <div class="utf_booking_listing_item_container compact utf_order_summary_widget_section">
-                    <div class="listing-item"> <img src="{{ asset('assets/frontend/images/listing-item-04.jpg') }}" alt="">
-                        <div class="utf_listing_item_content">
-                            <h3>Vintage Italian Beer Bar & Restaurant</h3>
-                            <span><i class="sl sl-icon-location"></i> The Ritz-Carlton, Hong Kong</span>
-                            <span><i class="sl sl-icon-phone"></i> (415) 796-3633</span>
-                            <div class="utf_star_rating_section" data-rating="4.5">
-                                <div class="utf_counter_star_rating">(18) Reviews</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="boxed-widget opening-hours summary margin-top-0">
-                    <h3><i class="fa fa-calendar-check-o"></i> Booking Summary</h3>
-                    <ul>
-                        <li>Appearing <span>10 Jan 2019</span></li>
-                        <li>Hour <span>1:30 PM</span></li>
-                        <li>Disappearing <span>16 Jan 2019</span></li>
-                        <li>Guests <span>3 Adults</span></li>
-                        <li>Deposit <span>$230.00</span></li>
-                        <li>V.A.T <span>$18.00</span></li>
-                        <li class="total-costs">Sub Total <span>$248.00</span></li>
-                        <li class="total-costs">
-                            <div class="col-md-8">
-                                <input id="couponCode" placeholder="Have a coupon enter here..." required="" type="text">
-                            </div>
-                            <div class="col-md-4">
-                                <input type="submit" class="coupon_code" value="Apply">
-                            </div>
-                            <div class="clearfix"></div>
-                        </li>
-                        <li class="total-costs">Total Cost <span>$248.00</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        </form>
     </div>
 
 @endsection

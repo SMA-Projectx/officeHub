@@ -15,4 +15,8 @@ class Cart extends Model
         'end_time',
         'status',
     ];
+
+    public function room(){
+        return $this->belongsTo(PropertyRooms::class, 'property_room_id');
+    }
 }

@@ -16,7 +16,7 @@ class RoomsController extends FrontendController
     }
 
     public function room($id){
-        $room =  '';
+        $room =  PropertyRooms::find($id);
         return view('frontend.room', ['room' => $room]);
     }
 }

@@ -27,4 +27,8 @@ class Properties extends Model
     public function room(){
         return $this->hasMany(PropertyRooms::class);
     }
+
+    public function district(){
+        return $this->belongsTo(Districts::class);
+    }
 }

@@ -27,6 +27,14 @@
             <div class="utf_right_side">
                 <div class="header_widget"> <a href="{{ url('login') }}" class="button border sign-in"><i class="fa fa-sign-in"></i> Sign In</a> <a href="{{ url('register') }}" class="button border with-icon"><i class="sl sl-icon-user"></i> Register</a></div>
             </div>
+            @else
+                <div class="utf_right_side">
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <div class="header_widget"> <a href="{{ route('logout') }}" class="button border sign-in" onclick="event.preventDefault();this.closest('form').submit();"><i class="fa fa-sign-in"></i> Log out</a></div>
+                    </form>
+
+                </div>
             @endif
         </div>
     </div>

@@ -20,4 +20,8 @@ class PropertyRooms extends Model
     public function property(){
         return $this->belongsTo(Properties::class);
     }
+
+    public function cart(){
+        return $this->hasMany(Cart::class);
+    }
 }
