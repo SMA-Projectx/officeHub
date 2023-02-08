@@ -18,7 +18,7 @@ class HomepageController extends FrontendController
     }
 
     public function contact(){
-        return 'Contact Us';
-        //return view('frontend.index');
+
+        return view('frontend.contact');
     }
 }

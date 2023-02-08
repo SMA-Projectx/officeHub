@@ -1,10 +1,10 @@
-<div class="search_container_block main_search_block" data-background-image="images/home_section_1.jpg">
+<div class="search_container_block main_search_block" data-background-image="assets/frontend/images/main_banner.jpeg">
     <div class="main_inner_search_block">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>Book Unique Experiences</h2>
-                    <h4>Discover top rated hotels, shops and restaurants around the world</h4>
+                    <h2>Find a place for Your conference</h2>
+                    <h4>The best way to start your business conference is to hold it in a comfortable and relaxing place</h4>
                     <div class="main_input_search_part">
                         <div class="main_input_search_part_item">
                             <input type="text" placeholder="Hotel, City..." value=""/>

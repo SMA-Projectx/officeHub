@@ -5,7 +5,7 @@
 <title>@yield('title')</title>
 
 <!-- Favicon -->
-<link rel="shortcut icon" href="{{ asset('assets/frontend/images/favicon.png') }}">
+<link rel="shortcut icon" href="{{ asset('assets/frontend/images/logo.jpeg') }}">
 <!-- Style CSS -->
 <link rel="stylesheet" href="{{ asset('assets/frontend/css/stylesheet.css') }}">
 <link rel="stylesheet" href="{{ asset('assets/frontend/css/mmenu.css') }}">
