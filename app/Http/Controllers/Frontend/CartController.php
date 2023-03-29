@@ -32,7 +32,7 @@ class CartController extends FrontendController
             $start = date('Y-m-d 09:00:00', strtotime($request->date));
             $end = date('Y-m-d 17:00:00', strtotime($request->date));
 
-            $cart = Cart::create([
+            $carts = Cart::create([
                 'user_id' => Auth::user()->id,
                 'property_room_id' => $request->room_id,
                 'start_time' => $start,
@@ -50,6 +50,8 @@ class CartController extends FrontendController
         }
 
     }
+
+
 
 
 }

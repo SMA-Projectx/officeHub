@@ -3,13 +3,17 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\PropertyRooms;
 use Illuminate\Http\Request;
 
 class HomepageController extends FrontendController
 {
+
     public function index(){
 
-        return view('frontend.index');
+        $rooms = PropertyRooms::where('status', 1)->orderBy('created_at', 'DESC')->get();
+        return view('frontend.index', ['rooms' => $rooms]);
+       // return view('frontend.index');
     }
 
     public function about(){
@@ -21,4 +25,7 @@ class HomepageController extends FrontendController
 
         return view('frontend.contact');
     }
+
+
+
 }

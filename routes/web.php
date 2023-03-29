@@ -5,6 +5,7 @@ use App\Http\Controllers\Frontend\HomepageController AS FrontHome;
 use App\Http\Controllers\Frontend\CartController AS Cart;
 use App\Http\Controllers\Frontend\CheckoutController AS Checkout;
 use App\Http\Controllers\Frontend\RoomsController AS FrontRooms;
+use App\Http\Controllers\Frontend\ConfirmationController AS confirm;
 
 use App\Http\Controllers\Backend\DashboardController AS AdminDashboard;
 use App\Http\Controllers\Backend\EquipmentsController AS Equipments;
@@ -41,6 +42,8 @@ Route::get('/about-us', [FrontHome::class, 'about']);
 Route::get('/contact-us', [FrontHome::class, 'contact']);
 Route::get('/rooms', [FrontRooms::class, 'rooms']);
 Route::get('/room/{id}', [FrontRooms::class, 'room']);
+Route::get('/confirmation', [confirm::class, 'confirm']);
+Route::get('/invoice', [confirm::class, 'invoice']);
 
 
 Route::middleware('auth')->group(function () {

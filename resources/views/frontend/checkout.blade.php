@@ -27,43 +27,43 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label>First Name</label>
-                                <input type="text" value="" name="first_name" placeholder="First Name">
+                                <input type="text" value="" name="first_name" placeholder="First Name" required />
                             </div>
                             <div class="col-md-6">
                                 <label>Last Name</label>
-                                <input type="text" value="" name="last_name" placeholder="Last Name">
+                                <input type="text" value="" name="last_name" placeholder="Last Name" required />
                             </div>
                             <div class="col-md-6">
                                 <label>Company Name</label>
-                                <input type="text" value="" name="company_name" placeholder="Company Name">
+                                <input type="text" value="" name="company_name" placeholder="Company Name" required />
                             </div>
                             <div class="col-md-6">
                                 <div class="medium-icons">
                                     <label>E-Mail</label>
-                                    <input type="text" value="" name="email" placeholder="Email">
+                                    <input type="text" value="" name="email" placeholder="Email" required />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="medium-icons">
                                     <label>Phone</label>
-                                    <input type="text" value="" name="phone" placeholder="Phone">
+                                    <input type="text" value="" name="phone" placeholder="Phone" required />
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <label>Street Address</label>
-                                <input type="text" value="" name="street_address" placeholder="Street Address">
+                                <input type="text" value="" name="street_address" placeholder="Street Address" required />
                             </div>
                             <div class="col-md-6">
                                 <label>Address2</label>
-                                <input type="text" value="" name="address2" placeholder="Address2">
+                                <input type="text" value="" name="address2" placeholder="Address2" required />
                             </div>
                             <div class="col-md-6">
                                 <label>Town</label>
-                                <input type="text" value="" name="town" placeholder="Town">
+                                <input type="text" value="" name="town" placeholder="Town" required />
                             </div>
                             <div class="col-md-6">
                                 <label>Postcode</label>
-                                <input type="text" value="" name="postcode" placeholder="Postcodes">
+                                <input type="text" value="" name="postcode" placeholder="Postcodes" required />
                             </div>
                             <div class="col-md-6">
                                 <label>District</label>
@@ -114,7 +114,7 @@
                             <li class="total-costs">Total Cost <span>{{ number_format($gross, 2) }}</span></li>
                         </ul>
                         <div class="row" style="border-top: 1px solid #ccc;padding: 20px 0 0;">
-                            <button type="submit" class="button button-primary" style="width: 100%; text-align: center;">Place Order</button>
+                            <a href="{{ url('confirmation') }}" class="button button-primary" style="width: 100%; text-align: center;">Place order</a>
                         </div>
                     </div>
                 </div>

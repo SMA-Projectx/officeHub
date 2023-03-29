@@ -51,7 +51,7 @@
                             @endforeach
                             @else
                             <tr>
-                                <td colspan="4" class="text-center"><h3>Cart is Empty</h3></td>
+                                <td colspan="4" class="text-center"><h2 class="headline_part centered margin-bottom-25">Check out successfully</h2></td>
                             </tr>
                             @endif
                         </table>
@@ -87,6 +87,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

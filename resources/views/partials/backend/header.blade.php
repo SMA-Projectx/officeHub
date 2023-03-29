@@ -23,11 +23,13 @@
                         User Options
                     </div>
                     <div class="p-2">
-                        <a class="dropdown-item" href="be_pages_generic_profile.html">
-                            <i class="far fa-fw fa-user me-1"></i> Profile
-                        </a>
                         <div role="separator" class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="op_auth_signin.html">
+
+                        <a class="dropdown-item" href="{{ url('') }}">
+                            <i class="far fa-fw fa-arrow-alt-circle-left me-1"></i> Back to Home page
+                        </a>
+
+                        <a class="dropdown-item" href="{{ url('') }}">
                             <i class="far fa-fw fa-arrow-alt-circle-left me-1"></i> Sign Out
                         </a>
                     </div>

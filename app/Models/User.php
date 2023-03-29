@@ -35,8 +35,6 @@ class User extends Authenticatable
         'district_id',
         'postcode',
         'status',
-        'first_name',
-        'last_name',
         'gender',
     ];
 

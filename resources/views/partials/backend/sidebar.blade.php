@@ -8,7 +8,7 @@
                 D<span class="opacity-75">x</span>
               </span>
                 <span class="smini-hidden">
-                Dash<span class="opacity-75">mix</span>
+                Office<span class="opacity-75">Hub</span>
               </span>
             </a>
             <!-- END Logo -->
@@ -26,7 +26,6 @@
                     <a class="nav-main-link" href="{{ url('/admin') }}">
                         <i class="nav-main-link-icon fa fa-location-arrow"></i>
                         <span class="nav-main-link-name">Dashboard</span>
-                        <span class="nav-main-link-badge badge rounded-pill bg-primary">8</span>
                     </a>
                 </li>
                 <li class="nav-main-heading">Base</li>

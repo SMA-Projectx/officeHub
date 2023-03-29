@@ -11,6 +11,8 @@
 <script src="{{ asset('assets/frontend/scripts/jquery_custom.js') }}"></script>
 <script src="{{ asset('assets/frontend/scripts/typed.js') }}"></script>
 
+
+
 @yield('js')
 
 <script>
@@ -36,6 +38,7 @@
 <!-- Date Range Picker - docs: http://www.daterangepicker.com/ -->
 <script src="{{ asset('assets/frontend/scripts/moment.min.js') }}"></script>
 <script src="{{ asset('assets/frontend/scripts/daterangepicker.js') }}"></script>
+
 
 <script>
     $(function() {
@@ -72,6 +75,8 @@
     $(window).on('load', function() {
         $('#booking-date-search').val('');
     });
+
+
 </script>
 @yield('script')
 

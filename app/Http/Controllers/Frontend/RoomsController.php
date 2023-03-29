@@ -11,7 +11,6 @@ class RoomsController extends FrontendController
     public function rooms(){
 
         $rooms = PropertyRooms::where('status', 1)->orderBy('created_at', 'DESC')->get();
-
         return view('frontend.rooms', ['rooms' => $rooms]);
     }
 
